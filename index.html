@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latorre Maxi</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Mobile Nav -->
+    <header class="mobile-header">
+        <h3 class="name"><a href="#">Maximiliano</a></h3>
+    </header>
+    <nav class="mobile-nav">
+        <a href="#home" class="nav-link active"><i class='bx bx-home'></i>Home</a>
+        <a href="#about" class="nav-link"><i class='bx bx-user' ></i>About Me</a>
+        <a href="#works" class="nav-link"><i class='bx bx-briefcase'></i>Works</a>
+        <a href="#contact" class="nav-link"><i class='bx bx-envelope' ></i>Contact</a>
+    </nav>
+    <!-- End Mobile Nav -->
+    
+    <!-- Desktop Nav -->
+    <nav class="nav">
+            <div class="navbar">
+                <h3 class="logo"><a href="#">Maximiliano</a></h3>
+                <ul id="ul">
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a class="" href="#about">About me</a></li>
+                    <li><a class="" href="#works">Works</a></li>
+                    <li><a class="" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+    </nav>
+    <!--End Desktop Nav -->
+
+    <!-- Home section-->
+    <header id="home" class="hero">
+        <img src="img/heroOne.jpg" alt="">
+        <h1 class="hello">Hello!</h1>
+        <h4 class="welcome">I´m Fronted Developer, Welcome to my website...</h4>
+        <i class='bx bx-chevron-down'></i>
+    </header>
+    <!-- End Home section-->
+
+    <!-- About section -->
+    <section id="about" class="about-me">
+        <div class="card">
+            <h1 class="title">About me</h1>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore natus officiis, modi
+                minus non eaque eius eos dicta earum reiciendis suscipit dolor, velit dolores atque saepe obcaecati,
+                aperiam itaque. Sequi laborum suscipit sunt autem harum tempora nisi modi dolores officia? Natus quos,
+                numquam cumque vitae dicta amet architecto dolor repellat!</p>
+                <div class="skills">
+                    <h4>These are some of my skills:</h4>
+                    <div class="skills-box">
+                        <i class='bx bxl-html5'><span class="skill-name">html5</span></i>
+                        <i class='bx bxl-css3' ><span class="skill-name">css3</span></i>
+                        <i class='bx bxl-javascript' ><span class="skill-name">javascript</span></i>
+                        <i class='bx bxl-bootstrap' ><span class="skill-name">bootstrap</span></i>
+                        <i class='bx bxl-git' ><span class="skill-name">git</span></i>
+                        <i class='bx bxl-figma' ><span class="skill-name">figma</span></i>
+                    </div>
+                </div>
+            <a href="#contact" class="button">Contact me</a>
+        </div>
+    </section>
+    <!-- End About section -->
+
+    <!-- Works section -->
+    <section id="works" class="works">
+        <h1 class="title">My Works</h1>
+        <div class="work-card">
+            <div class="img-card">
+                <img src="img/responsive.jpg" alt="">
+            </div>
+            <div class="content-texts">
+                <h3>Title one</h3>
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, impedit.
+                </p>
+                <a href="#" class="button">View more</a>
+            </div>
+        </div>
+        <div class="work-card">
+            <div class="content-texts">
+                <h3>Title one</h3>
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, impedit.
+                </p>
+                <a href="#" class="button">View more</a>
+            </div>
+            <div class="img-card">
+                <img src="img/responsive.jpg" alt="">
+            </div>
+        </div>
+        <div class="work-card">
+            <div class="img-card">
+                <img src="img/responsive.jpg" alt="">
+            </div>
+            <div class="content-texts">
+                <h3>Title one</h3>
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, impedit.
+                </p>
+                <a href="#" class="button">View more</a>
+            </div>
+        </div>
+        <div class="work-card">
+            <div class="content-texts">
+                <h3>Title one</h3>
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, impedit.
+                </p>
+                <a href="#" class="button">View more</a>
+            </div>
+            <div class="img-card">
+                <img src="img/responsive.jpg" alt="">
+            </div>
+    </section>
+    <!-- End Works section -->
+
+    <!-- Contact section -->
+    <section id="contact" class="contact">
+        <h1 class="title">Contact me</h1>
+        <div class="contact-card">
+            <div class="contact-social">
+                <a href="" class="link-icon"><i class='bx bxl-linkedin' ></i></a>
+                <a href="" class="link-icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="" class="link-icon"><i class='bx bxl-facebook-circle' ></i></a>
+            </div>
+            <form action="" method="post">
+                <label for="name"></label>
+                <input class="name" id="name" type="text" name="name" placeholder="Name" required>
+                <label for="email"></label>
+                <input class="email" id="email" type="email" name="email" placeholder="Email" required>
+                <label for="text"></label>
+                <textarea class="text" id="text" type="text" name="text" placeholder="Message" required></textarea>
+                <button class="button" id="submit" type="submit"><i class='bx bx-paper-plane'></i>Send</button>
+            </form>
+        </div>
+    </section>
+    <!-- End Contact section -->
+    
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
