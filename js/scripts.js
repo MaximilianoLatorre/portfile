@@ -19,3 +19,20 @@ mobileNav.addEventListener('click', (e)=>{
 })
 
 /*end acvtive mobile nav */
+
+/* ====== HEADER SHOW/HIDE ====== */
+const header = document.querySelector('#mobile-header')
+
+let scrollShow = window.scrollY
+
+document.addEventListener('scroll', (e) => {
+    let scrollNow = window.scrollY
+    if(scrollNow > scrollShow){
+        header.style.top = '-48px'
+    }else{
+        header.style.top = '0px'
+    }
+    scrollShow = scrollNow
+})
+
+console.log(header);
