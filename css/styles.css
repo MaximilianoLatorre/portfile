@@ -1,19 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap");
 
 :root {
-    --skyblue: #0197F6;
+    --skyblue: #0197f6;
     --bgdark: #091325;
-    --bgdark2: #201F21;
-    --title: #EDF2EF;
+    --bgdark2: #201f21;
+    --title: #edf2ef;
     --text: #a9aab1;
-    --shadowCard: 10px 10px 20px #161617,
-                 -10px -10px 20px #2a282b;
-    --shadowButton: 4px 4px 8px #161617,
-                   -4px -4px 8px #2a282b;
+    --shadowCard: 10px 10px 20px #161617, -10px -10px 20px #2a282b;
+    --shadowButton: 4px 4px 8px #161617, -4px -4px 8px #2a282b;
     --bgButton: linear-gradient(145deg, #222123, #1d1c1e);
-    --bgButtonActive: inset 4px 4px 8px #161617,
-                      inset -4px -4px 8px #2a282b;
+    --bgButtonActive: inset 4px 4px 8px #161617, inset -4px -4px 8px #2a282b;
 }
 
 * {
@@ -27,9 +24,18 @@ body {
     background: var(--bgdark2);
 }
 
+body.light {
+    --bgdark2: #edf2ef;
+    --title: #201f21;
+    --shadowCard: 10px 10px 20px #b2b6b3, -10px -10px 20px #ffffff;
+    --bgButton: linear-gradient(145deg, #feffff, #d5dad7);
+    --shadowButton: 4px 4px 8px #b2b6b3, -4px -4px 8px #ffffff;
+    --bgButtonActive: inset 4px 4px 8px #b2b6b3, inset -4px -4px 8px #ffffff;
+    --text: #2a2a2c;
+}
+
 /* mobile */
 @media (max-width: 768px) {
-
     .mobile-header {
         width: 100%;
         position: fixed;
@@ -39,10 +45,10 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow:  0px 3px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
         z-index: 1000;
         height: 3rem;
-        transition: .5s;
+        transition: 0.5s;
     }
 
     .mobile-header .name a {
@@ -50,18 +56,18 @@ body {
         color: var(--skyblue);
         margin: 8px 0;
         text-decoration: none;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 500;
         letter-spacing: 2px;
         font-size: 1.2rem;
         text-transform: uppercase;
-        transition: text-shadow .2s ease-in-out;
+        transition: text-shadow 0.2s ease-in-out;
     }
-    .mobile-header .name a:hover{
+    .mobile-header .name a:hover {
         text-shadow: 0.1px 0px 8px var(--skyblue), -0.1px 0px 8px var(--skyblue);
     }
 
-    .mobile-nav{
+    .mobile-nav {
         background: var(--bgdark2);
         position: fixed;
         bottom: 0;
@@ -70,62 +76,62 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        box-shadow:  0px -3px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.3);
         z-index: 1000;
     }
 
-    .mobile-nav .nav-link{
+    .mobile-nav .nav-link {
         display: block;
         color: var(--text);
         margin: 8px 0;
         text-decoration: none;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         display: flex;
         align-items: center;
         flex-direction: column;
-        font-size: .7rem;
+        font-size: 0.8rem;
+        font-weight: 500;
         letter-spacing: 2px;
-        transition: color .3s ease-in-out;
+        transition: color 0.3s ease-in-out;
     }
 
-    .mobile-nav .nav-link .bx{
+    .mobile-nav .nav-link .bx {
         font-size: 1.2rem;
         margin-bottom: 5px;
         z-index: -1;
     }
-    .mobile-nav .active{
+    .mobile-nav .active {
         color: var(--skyblue);
     }
-    .nav{
+    .nav {
         display: none;
     }
 
-    .hero img{
+    .hero img {
         width: 100%;
         height: 100%;
     }
 
-    .about-me .card .skills .skills-box{
-        grid-template-columns: repeat(2,1fr);
+    .about-me .card .skills .skills-box {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .works .work-card{
+    .works .work-card {
         flex-direction: column;
     }
 
-    .works .work-card .img-card{
+    .works .work-card .img-card {
         width: 100%;
         height: 280px;
     }
 
-    .works .work-card:nth-child(odd){
+    .works .work-card:nth-child(odd) {
         flex-direction: column-reverse;
     }
 }
 /* Fin Mobile */
 
-@media (min-width: 768px){
-
+@media (min-width: 768px) {
     .nav {
         display: flex;
         justify-content: center;
@@ -134,37 +140,35 @@ body {
         width: 100%;
         background: var(--bgdark2);
         z-index: 1000;
-        box-shadow:  0px 3px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
     }
 
     .mobile-header {
         display: none;
     }
-    .mobile-nav{
+    .mobile-nav {
         display: none;
     }
 
-    .hero img{
+    .hero img {
         max-width: 1000px;
         margin-top: 100px;
         object-fit: cover;
     }
-    
-    .about-me .card .skills .skills-box{
-        grid-template-columns: repeat(3,1fr);
+
+    .about-me .card .skills .skills-box {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .works .work-card{
+    .works .work-card {
         flex-direction: row;
     }
 
-    .works .work-card .img-card{
+    .works .work-card .img-card {
         width: 60%;
         height: 300px;
     }
-
 }
-
 
 /* desktop */
 
@@ -183,9 +187,9 @@ body {
     font-size: 1rem;
     text-transform: uppercase;
     margin: 14px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
-    transition: text-shadow .2s ease-in-out;
+    transition: text-shadow 0.2s ease-in-out;
     letter-spacing: 2px;
 }
 
@@ -207,40 +211,44 @@ body {
     letter-spacing: 1px;
     margin-right: 16px;
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     padding: 6px 12px;
     border-radius: 25px;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
-.navbar ul li:last-child a{
+.navbar ul li:last-child a {
     margin-right: 0;
 }
 
 .navbar ul li a:hover {
     color: var(--skyblue);
-    background-color: rgba(1, 151, 246, .2);
+    background-color: rgba(1, 151, 246, 0.2);
 }
 
 .navbar ul li .active {
     color: var(--skyblue);
-    box-shadow: var(--bgButtonActive)
+    box-shadow: var(--bgButtonActive);
 }
 
 /* HERO */
 
-.hero{
-    font-family: 'Raleway', sans-serif;
+.hero {
+    font-family: "Raleway", sans-serif;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to top, var(--bgdark2) 0%, transparent 65%);
+    background-image: linear-gradient(
+        to top,
+        var(--bgdark2) 0%,
+        transparent 65%
+    );
 }
 
-.hero img{
+.hero img {
     object-fit: cover;
     object-position: center;
     position: absolute;
@@ -248,47 +256,43 @@ body {
     z-index: -1;
 }
 
-.hero .hello{
+.hero .hello {
     margin-top: 200px;
     color: var(--skyblue);
     font-size: clamp(5rem, 11vw, 10rem);
 }
 
-.hero .welcome{
+.hero .welcome {
     color: var(--title);
-    font-weight: 200;
+    font-weight: 400;
     margin: 0 16px;
     text-align: center;
     font-size: clamp(14px, 2.5vw, 16px);
     letter-spacing: 1px;
 }
 
-.hero i{
+.hero i {
     color: var(--text);
     font-size: 6rem;
     animation: chevron 2s ease-in-out infinite;
 }
 
-@keyframes chevron{
+@keyframes chevron {
     0%,
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  
+
     50% {
-      transform: translateY(1rem);
+        transform: translateY(1rem);
     }
 }
 
 /* END HERO */
 
-
-
 /*=========================== About Me =========================*/
 
-
-
-.about-me{
+.about-me {
     width: 100%;
     background: var(--bgdark2);
     display: flex;
@@ -296,11 +300,11 @@ body {
     padding-top: 48px;
 }
 
-.about-me .card{
+.about-me .card {
     max-width: 1000px;
     width: 100%;
     margin: 16px;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -317,31 +321,32 @@ body {
     color: var(--title);
     width: 100%;
     text-align: center;
-} 
+}
 
-.text{
+.text {
     text-align: center;
     margin: 16px;
     letter-spacing: 1px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1rem;
     color: var(--text);
 }
 
-.button{
+.button {
     text-decoration: none;
     font-size: 1.2rem;
+    font-weight: 500;
     color: var(--skyblue);
     padding: 8px 16px;
     border-radius: 25px;
     background: var(--bgButton);
-    box-shadow:  var(--shadowButton);
+    box-shadow: var(--shadowButton);
     margin: 16px auto;
-    transition: background-color .2s ease-out, color .2s ease-out;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
 
-.button:hover{
-    background: rgba(1, 151, 246, .2);
+.button:hover {
+    background: rgba(1, 151, 246, 0.2);
 }
 /* .button:active{
     box-shadow: inset 5px 5px 9px #060c18,
@@ -349,11 +354,11 @@ body {
     background: none;
 } */
 
-.about-me .card .skills{
+.about-me .card .skills {
     width: 100%;
 }
 
-.about-me .card .skills h4{
+.about-me .card .skills h4 {
     margin: 16px;
     color: var(--skyblue);
     font-size: 1rem;
@@ -362,14 +367,14 @@ body {
     text-align: center;
 }
 
-.about-me .card .skills .skills-box{
+.about-me .card .skills .skills-box {
     margin: 16px;
     display: grid;
     grid-gap: 16px;
     grid-row: auto;
 }
 
-.about-me .card .skills .skills-box .bx{
+.about-me .card .skills .skills-box .bx {
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -379,44 +384,47 @@ body {
     color: var(--text);
     font-size: 5rem;
     border-radius: 15px;
-    transition: background .3s ease, transform .3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-.about-me .card .skills .skills-box .bx .skill-name{
-    font-family: 'Raleway', sans-serif;
+.about-me .card .skills .skills-box .bx .skill-name {
+    font-family: "Raleway", sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
+    font-weight: 500;
     position: absolute;
-    transition: transform .5s ease, opacity .8s ease;
+    transition: transform 0.5s ease, opacity 0.8s ease;
     opacity: 0;
     z-index: -1;
 }
-.about-me .card .skills .skills-box .bx:hover{
-    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 90%);
+.about-me .card .skills .skills-box .bx:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 90%
+    );
     transform: translateY(-5px);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadowCard);
 }
-.about-me .card .skills .skills-box .bx:hover .skill-name{
-    transform: translateY(3.5rem);
+.about-me .card .skills .skills-box .bx:hover .skill-name {
+    transform: translateY(3.8rem);
     opacity: 1;
 }
 
-
-
 /*======================== Fin About Me ==========================*/
 
-
 /* ======================== Works ============================== */
-.works{
+.works {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: 'raleway', sans-serif;
+    font-family: "raleway", sans-serif;
     padding: 48px 16px 0 16px;
     width: 100%;
 }
 
-.works .work-card{
+.works .work-card {
     padding: 16px;
     max-width: 1000px;
     width: 100%;
@@ -426,27 +434,27 @@ body {
     align-items: center;
     border-radius: 25px;
     background: var(--bgdark2);
-    box-shadow:  var(--shadowCard);
+    box-shadow: var(--shadowCard);
 }
 
-.works .work-card .img-card{
+.works .work-card .img-card {
     border-radius: 25px;
     background: var(--skyblue);
 }
 
-.works .work-card .img-card img{
+.works .work-card .img-card img {
     width: 100%;
     height: 100%;
     border-radius: 25px;
-    opacity: .6;
-    transition: opacity .3s ease;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
-.works .work-card .img-card img:hover{
+.works .work-card .img-card img:hover {
     opacity: 1;
 }
 
-.works .work-card .content-texts{
+.works .work-card .content-texts {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -454,11 +462,11 @@ body {
     text-align: center;
 }
 
-.works .work-card .content-texts h3{
+.works .work-card .content-texts h3 {
     color: var(--title);
     margin: 16px;
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
@@ -466,13 +474,13 @@ body {
 
 /* ===================== Contact me ============================== */
 
-.contact{
+.contact {
     width: 100%;
-    font-family: 'raleway', sans-serif;
+    font-family: "raleway", sans-serif;
     padding: 32px 16px 0 16px;
 }
 
-.contact .contact-card{
+.contact .contact-card {
     width: 100%;
     max-width: 1000px;
     height: 500px;
@@ -485,7 +493,7 @@ body {
     box-shadow: var(--shadowCard);
 }
 
-.contact .contact-card form{
+.contact .contact-card form {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -493,17 +501,17 @@ body {
     flex-direction: column;
 }
 
-.contact .contact-card form input{
+.contact .contact-card form input {
     margin: 16px;
     border: none;
-    font-family: 'raleway', sans-serif;
+    font-family: "raleway", sans-serif;
     color: var(--text);
     font-size: 16px;
     text-align: center;
 }
 
 .contact .contact-card form .name,
-.contact .contact-card form .email{
+.contact .contact-card form .email {
     width: 80%;
     max-width: 600px;
     height: 32px;
@@ -513,10 +521,10 @@ body {
     box-shadow: var(--bgButtonActive);
 }
 
-.contact .contact-card form .text{
+.contact .contact-card form .text {
     background: var(--bgdark2);
     box-shadow: var(--bgButtonActive);
-    font-family: 'raleway', sans-serif;
+    font-family: "raleway", sans-serif;
     color: var(--text);
     font-size: 16px;
     border-radius: 25px;
@@ -525,7 +533,7 @@ body {
     height: 150px;
     padding: 16px;
     resize: none;
-    text-align:center;
+    text-align: center;
     border: none;
 }
 
@@ -537,22 +545,20 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 120px;
-
 }
-.contact .contact-card form .button .bx{
+.contact .contact-card form .button .bx {
     font-size: 1.5rem;
 }
 
-
-.contact .contact-card .contact-social .link-icon .bx{
+.contact .contact-card .contact-social .link-icon .bx {
     color: var(--text);
     font-size: 2.5rem;
     margin: 16px;
-    transition: transform .5s ease-in-out, color .5s ease-in-out;
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-.contact .contact-card .contact-social .link-icon .bx:hover{
+.contact .contact-card .contact-social .link-icon .bx:hover {
     transform: rotateY(360deg);
-    color: var(--skyblue)
+    color: var(--skyblue);
 }
 /* ================= Fin Contact me =========================== */
