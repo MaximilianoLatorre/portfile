@@ -11,6 +11,19 @@
     --shadowButton: 4px 4px 8px #161617, -4px -4px 8px #2a282b;
     --bgButton: linear-gradient(145deg, #222123, #1d1c1e);
     --bgButtonActive: inset 4px 4px 8px #161617, inset -4px -4px 8px #2a282b;
+
+    /* ========== Font and typography ========== */
+    --body-font: "Roboto", sans-serif;
+    --title-font: "Raleway", sans-serif;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+    /* ========= Font Weight ========== */
+    --font-medium: 500;
+    --font-semi-bold: 600;
 }
 
 * {
@@ -22,219 +35,93 @@
 
 body {
     background: var(--bgdark2);
+    font-family: var(--body-font);
+    font-weight: 300;
 }
 
-body.light {
-    --bgdark2: #edf2ef;
-    --title: #201f21;
-    --shadowCard: 10px 10px 20px #b2b6b3, -10px -10px 20px #ffffff;
-    --bgButton: linear-gradient(145deg, #feffff, #d5dad7);
-    --shadowButton: 4px 4px 8px #b2b6b3, -4px -4px 8px #ffffff;
-    --bgButtonActive: inset 4px 4px 8px #b2b6b3, inset -4px -4px 8px #ffffff;
-    --text: #2a2a2c;
+.container {
+    max-width: 1000px;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /* mobile */
-@media (max-width: 768px) {
-    .mobile-header {
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: var(--bgdark2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-        height: 3rem;
-        transition: 0.5s;
-    }
 
-    .mobile-header .name a {
-        display: block;
-        color: var(--skyblue);
-        margin: 8px 0;
-        text-decoration: none;
-        font-family: "Roboto", sans-serif;
-        font-weight: 500;
-        letter-spacing: 2px;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        transition: text-shadow 0.2s ease-in-out;
-    }
-    .mobile-header .name a:hover {
-        text-shadow: 0.1px 0px 8px var(--skyblue), -0.1px 0px 8px var(--skyblue);
-    }
-
-    .mobile-nav {
-        background: var(--bgdark2);
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-    }
-
-    .mobile-nav .nav-link {
-        display: block;
-        color: var(--text);
-        margin: 8px 0;
-        text-decoration: none;
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        font-size: 0.8rem;
-        font-weight: 500;
-        letter-spacing: 2px;
-        transition: color 0.3s ease-in-out;
-    }
-
-    .mobile-nav .nav-link .bx {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-        z-index: -1;
-    }
-    .mobile-nav .active {
-        color: var(--skyblue);
-    }
-    .nav {
-        display: none;
-    }
-
-    .hero img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .about-me .card .skills .skills-box {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .works .work-card {
-        flex-direction: column;
-    }
-
-    .works .work-card .img-card {
-        width: 100%;
-        height: 280px;
-    }
-
-    .works .work-card:nth-child(odd) {
-        flex-direction: column-reverse;
-    }
-}
-/* Fin Mobile */
-
-@media (min-width: 768px) {
-    .nav {
-        display: flex;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: var(--bgdark2);
-        z-index: 1000;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    .mobile-header {
-        display: none;
-    }
-    .mobile-nav {
-        display: none;
-    }
-
-    .hero img {
-        max-width: 1000px;
-        margin-top: 100px;
-        object-fit: cover;
-    }
-
-    .about-me .card .skills .skills-box {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .works .work-card {
-        flex-direction: row;
-    }
-
-    .works .work-card .img-card {
-        width: 60%;
-        height: 300px;
-    }
+.mobile-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--bgdark2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    height: 3rem;
+    transition: 0.5s;
 }
 
-/* desktop */
+.mobile-header .name a {
+    color: var(--skyblue);
+    text-decoration: none;
+    font-family: var(--title-font);
+    font-weight: var(--font-semi-bold);
+    letter-spacing: 3px;
+    font-size: var(--h3-font-size);
+    text-transform: uppercase;
+    transition: text-shadow 0.2s ease-in-out;
+}
+.mobile-header .name a:hover {
+    text-shadow: 0.1px 0px 8px rgba(1, 151, 246, 0.4),
+        -0.1px 0px 8px rgba(1, 151, 246, 0.4);
+}
 
-.navbar {
+.mobile-nav {
+    background: var(--bgdark2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0 16px;
+    justify-content: space-around;
+    box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-.logo a {
+.mobile-nav .nav-link {
     display: block;
-    color: var(--skyblue);
-    text-decoration: none;
-    font-size: 1rem;
-    text-transform: uppercase;
-    margin: 14px 0;
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    transition: text-shadow 0.2s ease-in-out;
-    letter-spacing: 2px;
-}
-
-.logo a:hover {
-    text-shadow: 0.1px 0px 8px var(--skyblue), -0.1px 0px 8px var(--skyblue);
-}
-
-.navbar ul {
-    display: flex;
-}
-
-.navbar ul li {
-    list-style: none;
-}
-
-.navbar ul li a {
     color: var(--text);
+    height: 3rem;
     text-decoration: none;
-    letter-spacing: 1px;
-    margin-right: 16px;
-    font-size: 1rem;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    padding: 6px 12px;
-    border-radius: 25px;
-    transition: 0.3s ease-in-out;
-}
-.navbar ul li:last-child a {
-    margin-right: 0;
+    font-family: var(--title-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.3rem;
+    flex-direction: column;
+    font-size: var(--smaller-font-size);
+    letter-spacing: 2px;
+    transition: color 0.3s ease-in-out;
 }
 
-.navbar ul li a:hover {
+.mobile-nav .nav-link .bx {
+    font-size: 1.2rem;
+    z-index: -1;
+}
+/* ==================== ACTIVE LINK ==================== */
+.mobile-nav .active {
     color: var(--skyblue);
-    background-color: rgba(1, 151, 246, 0.2);
 }
 
-.navbar ul li .active {
-    color: var(--skyblue);
-    box-shadow: var(--bgButtonActive);
+.nav {
+    display: none;
 }
 
 /* HERO */
 
 .hero {
-    font-family: "Raleway", sans-serif;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -249,22 +136,26 @@ body.light {
 }
 
 .hero img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     position: absolute;
-    opacity: 1;
     z-index: -1;
 }
 
 .hero .hello {
+    position: relative;
     margin-top: 200px;
     color: var(--skyblue);
+    font-family: var(--title-font);
     font-size: clamp(5rem, 11vw, 10rem);
 }
 
 .hero .welcome {
+    position: relative;
     color: var(--title);
-    font-weight: 400;
+    font-weight: 300;
     margin: 0 16px;
     text-align: center;
     font-size: clamp(14px, 2.5vw, 16px);
@@ -272,9 +163,11 @@ body.light {
 }
 
 .hero i {
+    position: absolute;
     color: var(--text);
     font-size: 6rem;
     animation: chevron 2s ease-in-out infinite;
+    bottom: 4rem;
 }
 
 @keyframes chevron {
@@ -293,18 +186,12 @@ body.light {
 /*=========================== About Me =========================*/
 
 .about-me {
-    width: 100%;
-    background: var(--bgdark2);
-    display: flex;
-    justify-content: center;
     padding-top: 48px;
 }
 
 .about-me .card {
-    max-width: 1000px;
     width: 100%;
-    margin: 16px;
-    font-family: "Raleway", sans-serif;
+    padding: 2.5rem 0 1.5rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -321,13 +208,13 @@ body.light {
     color: var(--title);
     width: 100%;
     text-align: center;
+    font-family: var(--title-font);
 }
 
 .text {
     text-align: center;
     margin: 16px;
     letter-spacing: 1px;
-    font-weight: 400;
     font-size: 1rem;
     color: var(--text);
 }
@@ -335,7 +222,7 @@ body.light {
 .button {
     text-decoration: none;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--skyblue);
     padding: 8px 16px;
     border-radius: 25px;
@@ -348,11 +235,6 @@ body.light {
 .button:hover {
     background: rgba(1, 151, 246, 0.2);
 }
-/* .button:active{
-    box-shadow: inset 5px 5px 9px #060c18,
-            inset -5px -5px 9px #0c1a32;
-    background: none;
-} */
 
 .about-me .card .skills {
     width: 100%;
@@ -361,21 +243,21 @@ body.light {
 .about-me .card .skills h4 {
     margin: 16px;
     color: var(--skyblue);
-    font-size: 1rem;
+    font-size: var(--h3-font-size);
     letter-spacing: 1px;
     font-weight: 500;
     text-align: center;
 }
 
 .about-me .card .skills .skills-box {
-    margin: 16px;
     display: grid;
-    grid-gap: 16px;
-    grid-row: auto;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1.5rem;
+    grid-gap: 1.5rem;
+    justify-items: center;
 }
 
 .about-me .card .skills .skills-box .bx {
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -387,10 +269,9 @@ body.light {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .about-me .card .skills .skills-box .bx .skill-name {
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
+    font-family: var(--title-font);
+    font-size: var(--small-font-size);
     letter-spacing: 1px;
-    font-weight: 500;
     position: absolute;
     transition: transform 0.5s ease, opacity 0.8s ease;
     opacity: 0;
@@ -404,7 +285,6 @@ body.light {
     );
     transform: translateY(-5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--shadowCard);
 }
 .about-me .card .skills .skills-box .bx:hover .skill-name {
     transform: translateY(3.8rem);
@@ -415,36 +295,33 @@ body.light {
 
 /* ======================== Works ============================== */
 .works {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: "raleway", sans-serif;
-    padding: 48px 16px 0 16px;
-    width: 100%;
+    padding: 4.5rem 0 1.5rem 0;
 }
 
 .works .work-card {
     padding: 16px;
-    max-width: 1000px;
     width: 100%;
+    height: 520px;
     margin: 32px 0 32px 0;
     display: flex;
-    justify-content: space-between;
+    row-gap: 1.5rem;
+    flex-direction: column;
     align-items: center;
     border-radius: 25px;
-    background: var(--bgdark2);
     box-shadow: var(--shadowCard);
 }
 
 .works .work-card .img-card {
     border-radius: 25px;
     background: var(--skyblue);
+    height: 60%;
+    width: 100%;
 }
 
 .works .work-card .img-card img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 25px;
     opacity: 0.6;
     transition: opacity 0.3s ease;
@@ -458,26 +335,23 @@ body.light {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    height: 40%;
 }
 
 .works .work-card .content-texts h3 {
     color: var(--title);
     margin: 16px;
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: var(--h2-font-size);
+    font-family: var(--title-font);
+    font-weight: var(--font-semi-bold);
     letter-spacing: 1px;
 }
 
 /* ===================== Fin Works ============================== */
 
 /* ===================== Contact me ============================== */
-
 .contact {
-    width: 100%;
-    font-family: "raleway", sans-serif;
-    padding: 32px 16px 0 16px;
+    padding: 1.5rem 0 0.5rem 0;
 }
 
 .contact .contact-card {
@@ -562,3 +436,116 @@ body.light {
     color: var(--skyblue);
 }
 /* ================= Fin Contact me =========================== */
+
+/* =================== MEDIA QUERYS ==================== */
+@media (min-width: 768px) {
+    .mobile-header {
+        display: none;
+    }
+    .mobile-nav {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--bgdark2);
+        z-index: 1000;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .works .work-card {
+        flex-direction: column;
+    }
+
+    .works .work-card .img-card {
+        width: 100%;
+        height: 280px;
+    }
+
+    .works .work-card:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+
+    .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 16px;
+    }
+
+    .logo a {
+        display: block;
+        color: var(--skyblue);
+        text-decoration: none;
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin: 14px 0;
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        transition: text-shadow 0.2s ease-in-out;
+        letter-spacing: 2px;
+    }
+
+    .logo a:hover {
+        text-shadow: 0.1px 0px 8px rgba(1, 151, 246, 0.4),
+            -0.1px 0px 8px rgba(1, 151, 246, 0.4);
+    }
+
+    .navbar ul {
+        display: flex;
+    }
+
+    .navbar ul li {
+        list-style: none;
+    }
+
+    .navbar ul li a {
+        color: var(--text);
+        text-decoration: none;
+        letter-spacing: 1px;
+        margin-right: 16px;
+        font-size: 1rem;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        padding: 6px 12px;
+        border-radius: 25px;
+        transition: 0.3s ease-in-out;
+    }
+    .navbar ul li:last-child a {
+        margin-right: 0;
+    }
+
+    .navbar ul li a:hover {
+        color: var(--skyblue);
+        background-color: rgba(1, 151, 246, 0.2);
+    }
+
+    .navbar ul li .active {
+        color: var(--skyblue);
+        box-shadow: var(--bgButtonActive);
+    }
+
+    .hero img {
+        max-width: 1000px;
+        margin-top: 100px;
+        object-fit: cover;
+    }
+
+    .about-me .card .skills .skills-box {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .works .work-card {
+        flex-direction: row;
+    }
+
+    .works .work-card .img-card {
+        width: 60%;
+        height: 300px;
+    }
+}
