@@ -245,7 +245,7 @@ body {
     border-radius: 25px;
     background: var(--bgButton);
     box-shadow: var(--shadowButton);
-    margin: 16px auto;
+    margin: 16px;
     transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
 
@@ -315,6 +315,14 @@ body {
     padding: 2.5rem 0 1.5rem 0;
 }
 
+.works__description {
+    color: var(--text);
+    text-align: center;
+    font-size: var(--normal-font-size);
+    line-height: 1.2rem;
+    letter-spacing: 1px;
+}
+
 .works .work-card {
     padding: 16px;
     width: 100%;
@@ -329,39 +337,64 @@ body {
 }
 
 .works .work-card .img-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 25px;
-    background: var(--skyblue);
     height: 60%;
     width: 100%;
+    overflow: hidden;
 }
 
 .works .work-card .img-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 25px;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
 .works .work-card .img-card img:hover {
     opacity: 1;
+    transform: scale(1.2);
 }
 
 .works .work-card .content-texts {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     height: 40%;
 }
 
 .works .work-card .content-texts h3 {
     color: var(--title);
-    margin: 16px;
     font-size: var(--h2-font-size);
     font-family: var(--title-font);
     font-weight: var(--font-semi-bold);
     letter-spacing: 1px;
+}
+
+.card__button__content {
+    display: flex;
+    align-items: center;
+}
+
+.button__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--skyblue);
+    border-radius: 50%;
+    background: var(--bgButton);
+    box-shadow: var(--shadowButton);
+    margin: 16px;
+    transition: background-color 0.2s ease-out;
+}
+.button__icon:hover {
+    background: rgba(1, 151, 246, 0.2);
 }
 
 /* ===================== Fin Works ============================== */
@@ -372,10 +405,8 @@ body {
 }
 
 .contact .contact-card {
-    width: 100%;
-    max-width: 1000px;
     height: 500px;
-    margin: 32px auto 64px auto;
+    margin: 2.5rem 0 1rem 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -395,7 +426,6 @@ body {
 .contact .contact-card form input {
     margin: 16px;
     border: none;
-    font-family: "raleway", sans-serif;
     color: var(--text);
     font-size: 16px;
     text-align: center;
@@ -454,6 +484,23 @@ body {
 }
 /* ================= Fin Contact me =========================== */
 
+/* ================= FOOTER =========================== */
+.footer {
+    padding-bottom: 3.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.copyright {
+    font-size: var(--smaller-font-size);
+    color: var(--text);
+}
+
+.mail__footer {
+    color: var(--skyblue);
+    text-decoration: none;
+}
+
 /* =================== MEDIA QUERYS ==================== */
 @media (min-width: 768px) {
     .mobile-header {
@@ -491,8 +538,9 @@ body {
 
     .works .work-card .content-texts {
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         width: 45%;
+        height: 100%;
     }
 
     .works .work-card:nth-child(odd) {
@@ -501,6 +549,7 @@ body {
 
     .navbar {
         width: 100%;
+        height: 3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -510,11 +559,10 @@ body {
         display: block;
         color: var(--skyblue);
         text-decoration: none;
-        font-size: 1rem;
+        font-size: var(--h3-font-size);
         text-transform: uppercase;
-        margin: 14px 0;
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
+        font-family: var(--title-font);
+        font-weight: 600;
         transition: text-shadow 0.2s ease-in-out;
         letter-spacing: 2px;
     }
@@ -537,9 +585,7 @@ body {
         text-decoration: none;
         letter-spacing: 1px;
         margin-left: 16px;
-        font-size: 1rem;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
+        font-size: var(--normal-font-size);
         padding: 6px 12px;
         border-radius: 25px;
         transition: 0.3s ease-in-out;
