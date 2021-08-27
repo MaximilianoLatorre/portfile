@@ -164,7 +164,7 @@ body {
 
 .hero .hello {
     position: relative;
-    margin-top: 200px;
+    margin-top: 160px;
     color: var(--skyblue);
     font-family: var(--title-font);
     font-size: clamp(5rem, 11vw, 10rem);
@@ -172,7 +172,7 @@ body {
 
 .hero .welcome {
     position: relative;
-    color: var(--title);
+    color: var(--text);
     font-weight: 300;
     margin: 0 16px;
     text-align: center;
@@ -180,12 +180,17 @@ body {
     letter-spacing: 1px;
 }
 
+.highlight {
+    color: var(--title);
+    font-weight: 400;
+}
+
 .hero i {
     position: absolute;
     color: var(--text);
-    font-size: 6rem;
+    font-size: 4rem;
     animation: chevron 2s ease-in-out infinite;
-    bottom: 4rem;
+    bottom: 5rem;
 }
 
 @keyframes chevron {
@@ -337,7 +342,7 @@ body {
 }
 
 .works .work-card .img-card {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: thin solid rgba(255, 255, 255, 0.1);
     border-radius: 25px;
     height: 60%;
     width: 100%;
@@ -473,13 +478,13 @@ body {
 
 .contact .contact-card .contact-social .link-icon .bx {
     color: var(--text);
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 16px;
-    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .contact .contact-card .contact-social .link-icon .bx:hover {
-    transform: rotateY(360deg);
+    transform: translateY(-0.25rem);
     color: var(--skyblue);
 }
 /* ================= Fin Contact me =========================== */
@@ -503,6 +508,10 @@ body {
 
 /* =================== MEDIA QUERYS ==================== */
 @media (min-width: 768px) {
+    .hero__img {
+        object-position: center -12rem;
+    }
+
     .mobile-header {
         display: none;
     }
