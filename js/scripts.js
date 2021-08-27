@@ -34,3 +34,25 @@ document.addEventListener("scroll", (e) => {
     }
     scrollShow = scrollNow;
 });
+
+/* ========== SCROLL REVEAL ANIMATION ========= */
+const sr = ScrollReveal({
+    distance: "60px",
+    duration: 2400,
+    reset: true,
+});
+
+sr.reveal(`.nav_link_desk, .link-icon`, {
+    origin: "top",
+    interval: 200,
+});
+
+sr.reveal(`.welcome, .card, .work-card`, {
+    origin: "bottom",
+    interval: 200,
+});
+
+sr.reveal(`.hello, .title, .works__description, .contact-card`, {
+    distance: "0px",
+    opacity: 0,
+});

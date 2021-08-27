@@ -476,6 +476,10 @@ body {
     font-size: 1.5rem;
 }
 
+.link-icon {
+    display: inline-block;
+}
+
 .contact .contact-card .contact-social .link-icon .bx {
     color: var(--text);
     font-size: 2rem;
