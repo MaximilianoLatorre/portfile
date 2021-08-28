@@ -279,7 +279,7 @@ body {
     justify-items: center;
 }
 
-.about-me .card .skills .skills-box .bx {
+.about-me .card .skills .skills-box .skill_item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -299,7 +299,7 @@ body {
     opacity: 0;
     z-index: -1;
 }
-.about-me .card .skills .skills-box .bx:hover {
+.skill_item:hover {
     background: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.2) 0%,
@@ -308,7 +308,7 @@ body {
     transform: translateY(-5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.about-me .card .skills .skills-box .bx:hover .skill-name {
+.about-me .card .skills .skills-box .skill_item:hover .skill-name {
     transform: translateY(3.8rem);
     opacity: 1;
 }
@@ -526,7 +526,7 @@ body {
     .nav {
         display: flex;
         justify-content: center;
-        position: fixed;
+        position: sticky;
         top: 0;
         width: 100%;
         background: var(--bgdark2);

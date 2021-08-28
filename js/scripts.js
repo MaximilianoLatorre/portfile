@@ -40,16 +40,31 @@ const sr = ScrollReveal({
     distance: "60px",
     duration: 2400,
     reset: true,
+    useDelay: "onload",
 });
 
-sr.reveal(`.nav_link_desk, .link-icon`, {
+sr.reveal(`.logo`, {
+    origin: "left",
+    reset: false,
+    viewFactor: 0.2,
+});
+
+sr.reveal(`.nav_link_desk`, {
+    origin: "right",
+    interval: 200,
+    reset: false,
+});
+
+sr.reveal(`.link-icon`, {
     origin: "top",
     interval: 200,
+    reset: true,
 });
 
-sr.reveal(`.welcome, .card, .work-card`, {
+sr.reveal(`.welcome, .card, .work-card, .skill_item`, {
     origin: "bottom",
     interval: 200,
+    reset: true,
 });
 
 sr.reveal(`.hello, .title, .works__description, .contact-card`, {
