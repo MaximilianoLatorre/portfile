@@ -1,3 +1,11 @@
+/* ========== Pre-Loader ========== */
+window.addEventListener("load", function () {
+    const $loader = document.querySelector(".container_loader");
+
+    $loader.classList.add("fade");
+});
+/* ========== End Pre-Loader ========== */
+
 const ul = document.getElementById("ul");
 
 ul.addEventListener("click", (e) => {
@@ -38,7 +46,7 @@ document.addEventListener("scroll", (e) => {
 /* ========== SCROLL REVEAL ANIMATION ========= */
 const sr = ScrollReveal({
     distance: "60px",
-    duration: 2400,
+    duration: 1000,
     reset: true,
     useDelay: "onload",
 });
@@ -46,13 +54,14 @@ const sr = ScrollReveal({
 sr.reveal(`.logo`, {
     origin: "left",
     reset: false,
-    viewFactor: 0.2,
+    delay: 300,
 });
 
 sr.reveal(`.nav_link_desk`, {
     origin: "right",
     interval: 200,
     reset: false,
+    delay: 500,
 });
 
 sr.reveal(`.link-icon`, {
@@ -61,13 +70,28 @@ sr.reveal(`.link-icon`, {
     reset: true,
 });
 
-sr.reveal(`.welcome, .card, .work-card, .skill_item`, {
+sr.reveal(`.card, .work-card, .skill_item`, {
     origin: "bottom",
     interval: 200,
     reset: true,
 });
 
-sr.reveal(`.hello, .title, .works__description, .contact-card`, {
+sr.reveal(`.title, .works__description, .contact-card`, {
     distance: "0px",
     opacity: 0,
+});
+
+sr.reveal(`.hello, .welcome`, {
+    origin: "bottom",
+    interval: 300,
+    reset: true,
+    delay: 1200,
+});
+
+sr.reveal(`.name`, {
+    duration: 1500,
+    distance: "0px",
+    opacity: 0,
+    delay: 300,
+    reset: false,
 });
