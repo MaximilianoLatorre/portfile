@@ -60,7 +60,7 @@ body {
     margin-right: 1rem;
 }
 
-/* ========== PRE-LOADER ========== */
+/*  ========== ========== PRE-LOADER ========== ========== */
 .container_loader {
     position: fixed;
     z-index: 10000;
@@ -78,24 +78,53 @@ body {
     opacity: 0;
 }
 
-.circle {
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    border-left: 4px solid var(--skyblue);
-    border-radius: 50%;
-    animation: spin 1s infinite ease-in-out;
+.ionicon {
+    width: 40px;
+    height: 40px;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+.tag {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 32;
+    stroke: lightsteelblue;
+    stroke-linecap: round;
+    /* transform: translate(5px, 5px);*/
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+    animation: code 1s ease-in-out 2 alternate;
+}
+
+@keyframes code {
+    0%,
     100% {
-        transform: rotate(360deg);
+        stroke-dashoffset: 370;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    50.1% {
+        stroke-dashoffset: 720;
     }
 }
-/* ========== END PRE-LOADER ========== */
+
+.tag_M {
+    margin: 0 6px;
+    color: var(--skyblue);
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 700;
+    font-size: 32px;
+    animation: color 0.5s linear 2 alternate 0.5s;
+}
+
+@keyframes color {
+    to {
+        color: transparent;
+    }
+}
+
+/* ========== ========== END PRE-LOADER ========== ========== */
 
 /* mobile */
 
@@ -201,7 +230,7 @@ body {
 
 .hero .hello {
     position: relative;
-    margin-top: 160px;
+    margin-top: 120px;
     color: var(--skyblue);
     font-family: var(--title-font);
     font-size: clamp(5rem, 11vw, 10rem);
@@ -227,7 +256,7 @@ body {
     color: var(--text);
     font-size: 4rem;
     animation: chevron 2s ease-in-out infinite;
-    bottom: 5rem;
+    bottom: 6rem;
 }
 
 @keyframes chevron {
