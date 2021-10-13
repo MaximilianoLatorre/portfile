@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 </head>
 
 <body class="">
@@ -31,7 +32,7 @@
 
     <!-- Mobile Nav -->
     <header class="mobile-header" id="mobile-header">
-        <h3 class="name"><a href="#">Maximiliano</a></h3>
+        <h3 class="name-header"><a href="#">Maximiliano</a></h3>
     </header>
     <nav class="mobile-nav">
         <a href="#home" class="nav-link active"><i class='bx bx-home'></i>Home</a>
@@ -97,7 +98,9 @@
         <!-- ==================== Card 1 ==================== -->
         <div class="work-card">
             <div class="img-card">
-                <img src="img/Tattoo-Web-Responsive.png" alt="">
+                <a href="img/Tattoo Web Final.jpg" data-fancybox="gallery">
+                    <img class="work-img" src="img/Tattoo-Web-Responsive.png" alt="">
+                </a>
             </div>
             <div class="content-texts">
                 <h3>Tattoo Web Site</h3>
@@ -117,7 +120,7 @@
         <!-- ==================== Card 2 ==================== -->
         <div class="work-card">
             <div class="img-card">
-                <img src="img/responsive.jpg" alt="">
+                <img class="work-img" src="img/responsive.jpg" alt="">
             </div>
             <div class="content-texts">
                 <h3>Title</h3>
@@ -131,7 +134,7 @@
         <!-- ==================== Card 3 ==================== -->
         <div class="work-card">
             <div class="img-card">
-                <img src="img/responsive.jpg" alt="">
+                <img class="work-img" src="img/responsive.jpg" alt="">
             </div>
             <div class="content-texts">
                 <h3>Title</h3>
@@ -142,18 +145,15 @@
             </div>
         </div>
 
-        <!-- ==================== Card 4 ==================== -->
-        <div class="work-card">
-            <div class="img-card">
-                <img src="img/responsive.jpg" alt="">
+        <!-- ==================== VIEW IMG ==================== -->
+        <!-- <div class="img-overlay">
+            <i class='bx bx-x close'></i>
+            <div class="img-container">
+                <img src="img/Tattoo Web Final.jpg" alt="">
             </div>
-            <div class="content-texts">
-                <h3>Title</h3>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, impedit.
-                </p>
-                <a href="#" class="button">View more</a>
-            </div>
+        </div> -->
+
+
     </section>
 
     <!-- ==================== Contact ==================== -->
@@ -167,15 +167,16 @@
                         class='bx bxl-instagram'></i></a>
                 <a href="https://www.facebook.com/" target="_blank" class="link-icon"><i
                         class='bx bxl-facebook-circle'></i></a>
-
             </div>
-            <form action="" method="post">
-                <label for="name"></label>
-                <input class="name" id="name" type="text" name="name" placeholder="Name" required>
-                <label for="email"></label>
-                <input class="email" id="email" type="email" name="email" placeholder="Email" required>
-                <label for="text"></label>
-                <textarea class="text" id="text" type="text" name="text" placeholder="Message" required></textarea>
+
+            <form class="contact-form" action="">
+                <input class="name" id="name" type="text" name="name" placeholder="Name"
+                    title="Nombre solo acepta letras y espacios" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+                <input class="email" id="email" type="email" name="email" placeholder="Email" title="Email incorrecto"
+                    pattern="^[a-z0-9_]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                <textarea class="text" id="text" type="text" name="text" placeholder="Message"
+                    title="Tu comentario no debe exeder los 255 caracteres" data-pattern="^.{1,255}$"
+                    required></textarea>
                 <button class="button" id="submit" type="submit"><i class='bx bx-paper-plane'></i>Send</button>
             </form>
         </div>
@@ -189,6 +190,8 @@
 
     <!-- ========== SCROLL REVEAL ========== -->
     <script src="js/scrollreveal.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
     <script src="js/scripts.js"></script>
 </body>
