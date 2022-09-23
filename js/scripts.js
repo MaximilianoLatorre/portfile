@@ -104,6 +104,19 @@ sr.reveal(`.name-header`, {
 /**
  * FORM VALIDATION
  */
+const $formMessage = document.getElementById("message");
+let pattern = $formMessage.dataset.pattern;
+let regex = new RegExp(pattern);
 
-const $form = document.querySelector(".contact-form"),
-    $inputs = document.querySelectorAll(".contact-form [required]");
+const $span = document.createElement("span");
+$span.classList.add("message-error", "none");
+$span.textContent = $formMessage.title;
+$formMessage.insertAdjacentElement("afterend", $span);
+
+$formMessage.addEventListener("keyup", (e) => {
+    console.log(pattern);
+    console.log(regex.exec($formMessage.value));
+    return !regex.exec($formMessage.value)
+        ? $span.classList.remove("none")
+        : $span.classList.add("none");
+});
