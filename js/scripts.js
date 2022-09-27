@@ -101,9 +101,8 @@ sr.reveal(`.name-header`, {
     useDelay: "once",
 });
 
-/**
- * FORM VALIDATION
- */
+/* ========== FORM VALIDATION ========= */
+
 const $formMessage = document.getElementById("message");
 let pattern = $formMessage.dataset.pattern;
 let regex = new RegExp(pattern);
@@ -114,9 +113,32 @@ $span.textContent = $formMessage.title;
 $formMessage.insertAdjacentElement("afterend", $span);
 
 $formMessage.addEventListener("keyup", (e) => {
-    console.log(pattern);
-    console.log(regex.exec($formMessage.value));
     return !regex.exec($formMessage.value)
         ? $span.classList.remove("none")
         : $span.classList.add("none");
+});
+
+/* ========== FORMSUBMIT ========= */
+
+const contactForm = () => {
+    document.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(e.target);
+
+        fetch("https://formsubmit.co/ajax/62987e9729982c507c0906c6046f216f", {
+            method: "POST",
+            body: new FormData(e.target),
+        })
+            .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+            .then((json) => {
+                console.log(json);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    contactForm();
 });

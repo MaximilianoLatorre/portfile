@@ -602,6 +602,18 @@ body {
     color: var(--skyblue);
 }
 
+.name:focus,
+.email:focus,
+.message:focus {
+    outline: thin solid rgba(1, 152, 246, 0.3);
+}
+
+.name::selection,
+.email:focus,
+.message:focus {
+    outline: thin solid rgba(1, 152, 246, 0.2);
+}
+
 .message-error {
     margin-top: 0.5rem;
     font-size: var(--smaller-font-size);
